@@ -40,6 +40,7 @@ fun ScreenAbout(ConcreteCardId: Int, onClick: () -> Unit) {
 
 
         }
+
         Button(
             onClick = { onClick() },
             modifier = Modifier
