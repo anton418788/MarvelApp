@@ -38,6 +38,7 @@ fun ScreenAbout(ConcreteCardId: Int, onClick: () -> Unit) {
                 contentScale = ContentScale.Crop
             )
 
+
         }
         Button(
             onClick = { onClick() },
