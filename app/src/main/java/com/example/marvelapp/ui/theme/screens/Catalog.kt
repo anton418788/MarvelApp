@@ -1,4 +1,4 @@
-package com.example.marvelapp.screens
+package com.example.marvelapp.ui.theme.screens
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -13,8 +13,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.marvelapp.screens.details.MainHeader
-import com.example.marvelapp.screens.details.CatalogCards
+import com.example.marvelapp.ui.theme.screens.details.MainHeader
+import com.example.marvelapp.ui.theme.screens.details.CatalogCards
 import com.example.marvelapp.ui.theme.AppTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 

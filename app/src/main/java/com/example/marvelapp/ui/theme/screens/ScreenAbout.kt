@@ -1,4 +1,4 @@
-package com.example.marvelapp.screens
+package com.example.marvelapp.ui.theme.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,7 +21,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
-import com.example.marvelapp.screens.cards_info.getConcreteCardById
+import com.example.marvelapp.ui.theme.screens.cards_info.getConcreteCardById
 import com.example.marvelapp.ui.theme.AppTheme
 
 @Composable

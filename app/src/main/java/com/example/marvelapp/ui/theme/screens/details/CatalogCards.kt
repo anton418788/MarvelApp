@@ -1,4 +1,4 @@
-package com.example.marvelapp.screens.details
+package com.example.marvelapp.ui.theme.screens.details
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -24,8 +24,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.example.marvelapp.screens.cards_info.ConcreteCard
-import com.example.marvelapp.screens.cards_info.ConcreteCards
+import com.example.marvelapp.ui.theme.screens.cards_info.ConcreteCard
+import com.example.marvelapp.ui.theme.screens.cards_info.ConcreteCards
 import com.example.marvelapp.ui.theme.AppTheme
 
 

@@ -10,8 +10,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.marvelapp.MainActivity
-import com.example.marvelapp.screens.ScreenAbout
-import com.example.marvelapp.screens.Catalog
+import com.example.marvelapp.ui.theme.screens.ScreenAbout
+import com.example.marvelapp.ui.theme.screens.Catalog
 
 @Composable
 fun Navigation() {
