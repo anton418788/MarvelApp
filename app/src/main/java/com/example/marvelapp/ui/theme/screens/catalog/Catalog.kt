@@ -1,4 +1,4 @@
-package com.example.marvelapp.ui.theme.screens
+package com.example.marvelapp.ui.theme.screens.catalog
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -8,20 +8,31 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.marvelapp.ui.theme.screens.details.MainHeader
-import com.example.marvelapp.ui.theme.screens.details.CatalogCards
 import com.example.marvelapp.ui.theme.AppTheme
+import com.example.marvelapp.ui.theme.screens.details.CatalogCards
+import com.example.marvelapp.ui.theme.screens.details.MainHeader
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @Composable
-fun Catalog(scrollState: LazyListState, onClick: (Any) -> Unit) {
+fun Catalog(CatalogVM: CatalogVM, lazyListState: LazyListState, onClick: (Int) -> Unit) {
     ApplySystemBarColors()
+
+    val heroes by CatalogVM.heroesDataModel.observeAsState()
+    val status by CatalogVM.status.observeAsState()
+
+    LaunchedEffect(key1 = true) {
+        CatalogVM.getResponseList()
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -44,7 +55,7 @@ fun Catalog(scrollState: LazyListState, onClick: (Any) -> Unit) {
 
     Column {
         MainHeader()
-        CatalogCards(onClick, scrollState)
+        CatalogCards(heroes?.data, status, onItemClick = onClick, lazyListState = lazyListState)
     }
 }
 
@@ -57,8 +68,8 @@ private fun ApplySystemBarColors() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun CatalogPreview() {
-    Catalog(scrollState = LazyListState(), onClick = {})
+fun PreviewMarvelScreen() {
+    //MarvelScreen(navController = rememberNavController())
 }
