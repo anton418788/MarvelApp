@@ -1,10 +1,12 @@
 package com.example.marvelapp.network
 
 import android.util.Log
-import com.example.marvelapp.network.api.Constants
+import com.example.marvelapp.data.local.CatalogDataAccessObject
+import com.example.marvelapp.data.mapper.CatalogDtoEntityMap
+import com.example.marvelapp.data.mapper.CatalogEntityMapper
+import com.example.marvelapp.data.repository.CatalogRep
+import com.example.marvelapp.data.repository.CatalogRepI
 import com.example.marvelapp.network.api.MarvelApi
-import com.example.marvelapp.network.rep.CatalogRep
-import com.example.marvelapp.network.rep.CatalogRepI
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -52,8 +54,13 @@ class RetrofitService {
 
     @Provides
     @Singleton
-    fun provideCatalogRep(api: MarvelApi): CatalogRep {
-        return CatalogRepI(api)
+    fun provideMainRepository(
+        api: MarvelApi,
+        dao: CatalogDataAccessObject,
+        dtoToEntityMapper: CatalogDtoEntityMap,
+        entityToUiMapper: CatalogEntityMapper)
+    : CatalogRep {
+        return CatalogRepI(api, dao, dtoToEntityMapper, entityToUiMapper)
     }
 
     @Provides

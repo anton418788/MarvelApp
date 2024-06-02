@@ -4,8 +4,10 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
     id("kotlin-kapt")
+
     id("com.google.dagger.hilt.android")
 }
+
 
 android {
     namespace = "com.example.marvelapp"
@@ -34,11 +36,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
     buildFeatures {
         compose = true
@@ -51,11 +53,16 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    kapt {
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas") // Указывает каталог для экспорта схемы
+        }
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
 
-    implementation(libs.androidx.room.common)
     val nav_version = "2.7.7"
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
@@ -94,6 +101,12 @@ dependencies {
     implementation("com.google.dagger:dagger-android-support:$daggerVer")
     kapt("com.google.dagger:dagger-android-processor:2.51")
     kapt("com.google.dagger:dagger-compiler:2.51")
+
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
