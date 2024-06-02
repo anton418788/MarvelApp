@@ -7,8 +7,8 @@ import androidx.activity.viewModels
 import androidx.core.view.WindowCompat
 import com.example.marvelapp.navigation.Navigation
 import com.example.marvelapp.network.rep.CatalogRep
-import com.example.marvelapp.ui.theme.screens.catalog.CatalogVM
-import com.example.marvelapp.ui.theme.screens.screen_about.ScreenAboutVM
+import com.example.marvelapp.ui.screens.catalog.CatalogVM
+import com.example.marvelapp.ui.screens.screen_about.ScreenAboutVM
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

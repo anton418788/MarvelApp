@@ -1,6 +1,7 @@
 package com.example.marvelapp.network
 
 import android.util.Log
+import com.example.marvelapp.network.api.Constants
 import com.example.marvelapp.network.api.MarvelApi
 import com.example.marvelapp.network.rep.CatalogRep
 import com.example.marvelapp.network.rep.CatalogRepI

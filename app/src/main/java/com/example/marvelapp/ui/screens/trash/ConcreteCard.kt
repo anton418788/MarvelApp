@@ -1,5 +1,6 @@
-package com.example.marvelapp.ui.theme.screens.cards_info
+package com.example.marvelapp.ui.screens.trash
 
+//УСТАРШЕВШИЙ
 import com.example.marvelapp.R
 
 data class ConcreteCard(

@@ -10,10 +10,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.marvelapp.MainActivity
-import com.example.marvelapp.ui.theme.screens.catalog.Catalog
-import com.example.marvelapp.ui.theme.screens.catalog.CatalogVM
-import com.example.marvelapp.ui.theme.screens.screen_about.ScreenAbout
-import com.example.marvelapp.ui.theme.screens.screen_about.ScreenAboutVM
+import com.example.marvelapp.ui.screens.catalog.Catalog
+import com.example.marvelapp.ui.screens.catalog.CatalogVM
+import com.example.marvelapp.ui.screens.screen_about.ScreenAbout
+import com.example.marvelapp.ui.screens.screen_about.ScreenAboutVM
 
 @Composable
 fun Navigation(
@@ -36,6 +36,7 @@ fun Navigation(
                 navController.navigate(Screen.ScreenAbout.route + "/$heroId")
             }
         }
+
 
         composable(
             route = "${Screen.ScreenAbout.route}/{heroId}",

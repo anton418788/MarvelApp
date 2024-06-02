@@ -1,4 +1,4 @@
-package com.example.marvelapp.ui.theme.screens.screen_about
+package com.example.marvelapp.ui.screens.screen_about
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.marvelapp.navigation.Screen
-import com.example.marvelapp.network.ResponseStatus
+import com.example.marvelapp.network.response.ResponseStatus
 import com.example.marvelapp.ui.components.CatalogDataModel
 import com.example.marvelapp.ui.components.convertUrl
 import com.example.marvelapp.ui.theme.AppTheme

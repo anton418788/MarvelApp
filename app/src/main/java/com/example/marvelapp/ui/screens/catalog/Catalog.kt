@@ -1,4 +1,4 @@
-package com.example.marvelapp.ui.theme.screens.catalog
+package com.example.marvelapp.ui.screens.catalog
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -17,8 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.marvelapp.ui.theme.AppTheme
-import com.example.marvelapp.ui.theme.screens.details.CatalogCards
-import com.example.marvelapp.ui.theme.screens.details.MainHeader
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
@@ -55,7 +53,7 @@ fun Catalog(CatalogVM: CatalogVM, lazyListState: LazyListState, onClick: (Int) -
 
     Column {
         MainHeader()
-        CatalogCards(heroes?.data, status, onItemClick = onClick, lazyListState = lazyListState)
+        CatalogValidation(heroes?.data, status, onItemClick = onClick, lazyListState = lazyListState)
     }
 }
 

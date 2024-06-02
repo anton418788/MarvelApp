@@ -1,4 +1,4 @@
-package com.example.marvelapp.network
+package com.example.marvelapp.network.api
 
 import android.util.Log
 import okhttp3.Interceptor
