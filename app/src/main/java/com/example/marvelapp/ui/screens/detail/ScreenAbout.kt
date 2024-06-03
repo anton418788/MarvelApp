@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -27,8 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.marvelapp.data.model.ui.UiResults
-import com.example.marvelapp.navigation.Screen
-import com.example.marvelapp.network.api.ApiStatus
+import com.example.marvelapp.data.network.api.ApiStatus
+import com.example.marvelapp.ui.navigation.Screen
 import com.example.marvelapp.ui.theme.AppTheme
 
 @Composable
@@ -91,7 +91,7 @@ fun CardDetails(navController: NavController, cardData: UiResults, cardId: Int) 
                     shape = CircleShape
                 ) {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = null,
                         tint = AppTheme.ButtonColor.buttonColor
                     )

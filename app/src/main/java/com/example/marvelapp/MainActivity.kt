@@ -5,9 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.core.view.WindowCompat
-import com.example.marvelapp.navigation.Navigation
+import com.example.marvelapp.ui.navigation.Navigation
 import com.example.marvelapp.ui.screens.detail.DetailVM
-import com.example.marvelapp.ui.screens.marvel.CatalogVM
+import com.example.marvelapp.ui.screens.main.CatalogVM
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -25,7 +25,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.marvelapp.data.model.ui.UiResults
-import com.example.marvelapp.network.api.ApiStatus
+import com.example.marvelapp.data.network.api.ApiStatus
 import com.example.marvelapp.ui.theme.AppTheme
 
 @OptIn(ExperimentalFoundationApi::class)
