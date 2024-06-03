@@ -1,4 +1,4 @@
-package com.example.marvelapp.ui.theme.screens.cards_info
+package com.example.marvelapp.screens.cards_info
 
 import com.example.marvelapp.R
 
