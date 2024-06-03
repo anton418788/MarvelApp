@@ -10,57 +10,50 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.marvelapp.MainActivity
-import com.example.marvelapp.screens.ScreenAbout
-import com.example.marvelapp.screens.Catalog
+import com.example.marvelapp.ui.theme.screens.catalog.Catalog
+import com.example.marvelapp.ui.theme.screens.catalog.CatalogVM
+import com.example.marvelapp.ui.theme.screens.screen_about.ScreenAbout
+import com.example.marvelapp.ui.theme.screens.screen_about.ScreenAboutVM
 
 @Composable
-fun Navigation() {
+fun Navigation(
+    catalogVM: CatalogVM,
+    screenAboutVM: ScreenAboutVM
+) {
     val navController = rememberNavController()
-    val scrollState = rememberLazyListState()
 
     val context = LocalContext.current
-
     val onBackPressedDispatcher = (context as MainActivity).onBackPressedDispatcher
 
-    val callback = object : OnBackPressedCallback(true) {
-        override fun handleOnBackPressed() {}
-    }
-    onBackPressedDispatcher.addCallback(callback)
-
+    val lazyListState = rememberLazyListState()
 
     NavHost(
         navController = navController,
         startDestination = Screen.MainScreen.route
-
     ) {
         composable(Screen.MainScreen.route) {
-            Catalog(scrollState) { ConcreteCardId ->
-                navController.navigate(Screen.ScreenAbout.route + "/$ConcreteCardId")
+            Catalog(catalogVM, lazyListState) { heroId ->
+                navController.navigate(Screen.ScreenAbout.route + "/$heroId")
             }
         }
 
         composable(
-            Screen.ScreenAbout.route + "/{ConcreteCardId}",
-            arguments = listOf(navArgument("ConcreteCardId") { type = NavType.IntType })
+            route = "${Screen.ScreenAbout.route}/{heroId}",
+            arguments = listOf(navArgument("heroId") { type = NavType.IntType })
         ) { backStackEntry ->
-            val ConcreteCardId = backStackEntry.arguments?.getInt("ConcreteCardId")
-            if (ConcreteCardId != null) {
-                ScreenAbout(ConcreteCardId = ConcreteCardId) {
+            val heroId = backStackEntry.arguments?.getInt("heroId") ?: -1
+            ScreenAbout(navController, screenAboutVM, heroId)
+            val callback = object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
                     navController.navigate(Screen.MainScreen.route)
                 }
-
-                val callback = object : OnBackPressedCallback(true) {
-                    override fun handleOnBackPressed() {
-                        navController.navigate(Screen.MainScreen.route)
-                    }
-                }
-                onBackPressedDispatcher.addCallback(callback)
             }
+            onBackPressedDispatcher.addCallback(callback)
         }
     }
 }
 
 sealed class Screen(val route: String) {
     data object MainScreen : Screen("main_screen")
-    data object ScreenAbout : Screen("detail_screen")
+    data object ScreenAbout : Screen("screen_about")
 }

@@ -1,4 +1,4 @@
-package com.example.marvelapp.screens.details
+package com.example.marvelapp.ui.theme.screens.details
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

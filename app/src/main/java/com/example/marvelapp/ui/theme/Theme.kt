@@ -26,10 +26,10 @@ object AppTheme {
     }
 
     object Paddings {
-        val ConcreteCardOpPadding
+        val HeroCardPadding
             get() = 20.dp
 
-        val PaddingValues_ConcreteCardOp
+        val PaddingValues_HeroCard
             @Composable
             get() =
                 PaddingValues (start = 20.dp, bottom = 30.dp)
@@ -39,26 +39,26 @@ object AppTheme {
                 PaddingValues(top = 35.dp)
         val MainHeaderSpacer
             get() = 35.dp
-        val ConcreteCardDetailButton
+        val HeroDetailButton
             @Composable
             get() =
                 PaddingValues(top = 25.dp)
-        val ConcreteCardDetailHorizontalPadding
+        val HeroDetailHorizontalPadding
             @Composable
             get() =
                 PaddingValues(horizontal = 20.dp)
-        val ConcreteCardDetailSpacer
+        val HeroDetailSpacer
             get() = 20.dp
-        val ConcreteCardDetailTextPadding
+        val HeroDetailTextPadding
             @Composable
             get() =
                 PaddingValues(bottom = 35.dp)
     }
 
     object Size {
-        val ConcreteCardOpHeight
+        val HeroCardHeight
             get() = 550.dp
-        val ConcreteCardOpWidth
+        val HeroCardWidth
             get() = 300.dp
         val CanvasSize
             get() = 500.dp
